@@ -1,0 +1,29 @@
+<%= current_user.email %>
+<h1 class="id">Add a new Topic</h1>
+<!-- <div class="alert alert-danger" role="alert"><%= @error %></div> -->
+<%= form_for @topic do |f| %>
+<div class="row">
+  <div class="col-xs-2">
+    <%= f.label :title %>
+    <%= f.text_field :title,class:'form-control' %> 
+  </div>
+  
+  <div class="col-md-3">
+
+   <%= f.label :category %>
+   <div class="form-group">
+    <%= f.select :category_id, Category.all.map { |category| [category.title, category.id]}, {}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+  </div>
+</div>
+</div>
+<div>
+  <h3>Description:</h3>
+</div>
+<div>
+  <%= f.text_area :description,class:'from-control',rows:'12',cols:'60' %>
+</div>
+<div>
+  <%= f.submit 'save',class:'class="btn btn-success' %>
+</div>
+</div>
+<% end %>

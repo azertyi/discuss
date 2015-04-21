@@ -1,0 +1,19 @@
+
+<h1><%= @topic.title %></h1>
+<h5><%= @topic.category.title %></h5>
+<hr>
+<div class="col-xs-6 col-md-1">
+	<% if current_user %>
+	<%= gravatar current_user %>
+	<%end%>
+	
+</div>
+
+<div class="col-xs-6 col-md-4">
+	<%= @topic.created_at %>
+</div>
+<div class="paragraphe">
+	<p>
+		<%= @topic.description %>
+	</p>
+</div>
